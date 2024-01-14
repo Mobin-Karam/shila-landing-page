@@ -18,6 +18,10 @@
       align-items: center;
       justify-content: space-between;
       direction: rtl;
+      @include util.breakpoint-down(small) {
+        padding: 0 6px;
+      }
+
       @include util.breakpoint-up(xlarge) {
         max-width: 1400px;
         margin: 0 auto;
@@ -29,12 +33,16 @@
         flex-direction: row;
 
         figure {
-          width: 50px;
+          width: 55px;
           height: 60px;
           margin-right: 20px;
           img {
             width: 100%;
             height: 100%;
+          }
+
+          @include util.breakpoint-down(small) {
+            margin-right: 14px;
           }
         }
 
@@ -53,6 +61,10 @@
           p:nth-child(2) {
             margin: 0;
             font-size: 13px;
+          }
+
+          @include util.breakpoint-down(small) {
+            display: none;
           }
         }
       }
