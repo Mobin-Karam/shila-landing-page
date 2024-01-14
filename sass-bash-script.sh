@@ -1,5 +1,6 @@
 mkdir sass
 cd sass
+touch style.scss
 mkdir globals components layout pages themes util vendors
 cd globals
 touch _animations.scss _typography.scss _base.scss _index.scss _colors.scss _boilerplate.scss

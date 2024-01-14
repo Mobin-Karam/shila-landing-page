@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="auto" translate="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,19 +10,69 @@
       content="سفارش آنلاین غذا از مجموعه رستوران های شیلا"
     />
     <!-- Links  -->
+    <!-- Favicon  -->
     <link
       rel="shortcut icon"
       type="image/x-icon"
       href="./assets/images/favicon.ico"
     />
-    <link rel="stylesheet" href="./styles/css/main.css" />
+    <!-- Style Link -->
+    <!-- <link rel="stylesheet" href="./styles/css/main.css" /> -->
+    <link rel="stylesheet" href="./dist/style.css" />
 
     <script src="./js/button.js"></script>
   </head>
 
-  
   <body>
-    <div class="container">
+    <div id="root">
+      <div class="container">
+        <!-- Header Start -->
+        <header>
+          <div class="header">
+            <div class="header__logo">
+              <aside>
+                <p>
+                  <span>
+                    رستوران های<br />
+                    زنجیره ای شیلا
+                  </span>
+                </p>
+                <p>
+                  <span>
+                    Shila Chain <br />
+                    Restaurants
+                  </span>
+                </p>
+              </aside>
+              <figure>
+                <img src="./assets/images/logo.png" alt="" />
+              </figure>
+            </div>
+            <div class="header__button">
+              <a href="#">
+                <button class="header__user-button">
+                  <span> <i class="icon"></i>ورود / عضویت</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </header>
+        <!-- Header Start -->
+
+        <!-- Main Start -->
+        <!-- <main class="main">
+          <div class="sc-10csuqt-7 cFnecL">
+            <i class="icon"></i><span>سبد خرید خالی است</span>
+          </div>
+        </main> -->
+        <!-- Main End -->
+
+        <!-- Footer Start -->
+        <footer class="footer"></footer>
+        <!-- Footer End -->
+      </div>
+    </div>
+    <!-- <div class="container">
       <i class="qhp95m-0 kaKzwq icon"></i>
       <button onclick="handleClickButton()">دریافت اطلاعات</button>
       <div class="popup-box">
@@ -30,6 +80,6 @@
         <h1>الان سفارش نمیگیریم!.</h1>
         <p>برای دریافت سفارش در زمان مشخص شده به سایت مراجعه بکنید.</p>
       </div>
-    </div>
+    </div> -->
   </body>
 </html>
