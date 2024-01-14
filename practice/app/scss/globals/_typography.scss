@@ -1,3 +1,5 @@
+@use "../util";
+
 h1,
 h2,
 h3 {
@@ -6,10 +8,20 @@ h3 {
   margin-top: 0;
 }
 
-p {
-    margin-top: 0; // it's same as 0px or 0rem
+h1 {
+  font-size: 28px;
+
+  @include util.breakpoint-up(large) {
+    font-size: 36px;
+  }
 }
 
-a, a:active,a:visited{
-    text-decoration: none;
+p {
+  margin-top: 0; // it's same as 0px or 0rem
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
 }
