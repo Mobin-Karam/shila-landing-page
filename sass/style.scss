@@ -121,7 +121,7 @@
 
     // Main Banner Status ========================
     &__status {
-      width: 100%;
+      width: calc(100% - 60px);
       display: flex;
       align-items: center;
       justify-content: end;

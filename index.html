@@ -50,7 +50,7 @@
             </div>
             <div class="header__button">
               <a href="#">
-                <button class="header__user-button">
+                <button class="header__user-button" id="login-button">
                   <span> <i class="icon"></i>ورود / عضویت</span>
                 </button>
               </a>
@@ -93,29 +93,24 @@
         <!-- Footer End -->
 
         <!-- Modal -->
-        <div class="container__modal mobile">
-          <div class="container__modal__box">
+        <div class="container__modal" id="modal">
+          <div class="container__modal__box" id="modal-small">
             <div class="container__modal__box__icon">
-              <i class="icon"></i>
+              <i class="icon" id="exit-modal"></i>
             </div>
             <h4>شماره موبایلت رو وارد کن</h4>
             <div class="container__modal__box__input-mobile">
-              <input type="tel" name="" id="mobile" />
-              <label for="mobile">شماره موبایل (۰۹xxxxxxxxx)</label>
+              <input type="tel" name="" id="mobile" required />
+              <label for="mobile" id="mobile-label"
+                >شماره موبایل (۰۹xxxxxxxxx)</label
+              >
             </div>
-            <button><i class="icon"></i> Click</button>
+            <button><i class="icon"></i> ادامه</button>
           </div>
         </div>
       </div>
     </div>
-    <!-- <div class="container">
-      <i class="qhp95m-0 kaKzwq icon"></i>
-      <button onclick="handleClickButton()">دریافت اطلاعات</button>
-      <div class="popup-box">
-        <button class="exit" onclick="handleExitButton()">Esc</button>
-        <h1>الان سفارش نمیگیریم!.</h1>
-        <p>برای دریافت سفارش در زمان مشخص شده به سایت مراجعه بکنید.</p>
-      </div>
-    </div> -->
+    <!-- Scripts  -->
+    <script src="./js/script.js"></script>
   </body>
 </html>

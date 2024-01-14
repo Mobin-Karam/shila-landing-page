@@ -1,177 +1,377 @@
 @use "../util";
 
 .container__modal {
-  direction: rtl;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-flow: column nowrap;
-  background-color: #fff;
-  font-family: IRANSans, Tahoma, sans-serif;
-
-  &__box {
+  @include util.breakpoint-up(large) {
+    display: none;
+    overflow: hidden;
+    direction: rtl;
     width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #00000080;
+
+    // Box =====
+    &__box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      width: 400px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-flow: column nowrap;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+
+      //Animation======
+      @keyframes popup {
+        0% {
+          top: -50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+        }
+        100% {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+        }
+      }
+      @keyframes popdown {
+        0% {
+          //top: 50%;
+          //left: 50%;
+          //transform: translate(-50%, -50%);
+          //-webkit-transform: translate(-50%, -50%);
+          //-moz-transform: translate(-50%, -50%);
+          //-ms-transform: translate(-50%, -50%);
+          //-o-transform: translate(-50%, -50%);
+          opacity: 1;
+        }
+        100% {
+          //top: 50%;
+          //left: 50%;
+          //transform: translate(-50%, -50%);
+          //-webkit-transform: translate(-50%, -50%);
+          //-moz-transform: translate(-50%, -50%);
+          //-ms-transform: translate(-50%, -50%);
+          //-o-transform: translate(-50%, -50%);
+          opacity: 0;
+        }
+      }
+
+      //Exit Icon =======
+      &__icon {
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid #c7c7c7;
+        padding-top: 16px;
+        padding-bottom: 16px;
+
+        .icon {
+          width: 100%;
+          padding: 20px;
+          color: #0e0e0e;
+          font-size: 0.9em;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          vertical-align: middle;
+          padding-top: 1px;
+          -webkit-font-smoothing: antialiased;
+          font-family: DelinoIcon !important;
+          cursor: pointer;
+
+          &::before {
+            content: "";
+          }
+        }
+      }
+
+      h4 {
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      // Input =======
+      &__input-mobile {
+        position: relative;
+        margin-top: 10px;
+
+        label {
+          display: block;
+          width: 300px;
+          position: absolute;
+          top: 16px;
+          right: 48px;
+          color: #c7c7c7;
+          font-size: 14px;
+          font-family: IRANSans, Tahoma, sans-serif;
+          transition: all 0.15s ease-in;
+          -webkit-transition: all 0.15s ease-in;
+          -moz-transition: all 0.15s ease-in;
+          -ms-transition: all 0.15s ease-in;
+          -o-transition: all 0.15s ease-in;
+        }
+
+        input {
+          width: 300px;
+          padding: 10px;
+          text-align: center;
+          font-size: 20px;
+          font-family: IRANSans, Tahoma, sans-serif;
+          border: none;
+          border-bottom: 1px solid #c7c7c7;
+
+          &:focus {
+            outline: none;
+          }
+
+          &:focus ~ label {
+            position: absolute;
+            top: -10px;
+            left: 68px;
+            font-size: 12px;
+            color: #000;
+          }
+        }
+      }
+
+      // Button =======
+      button {
+        direction: ltr;
+        position: relative;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: center;
+        color: #fff;
+        background-color: rgb(255, 117, 37);
+        padding: 20px;
+        width: 300px;
+        margin-top: 50px;
+        border: none;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        cursor: pointer;
+
+        .icon {
+          position: absolute;
+          top: 20px;
+          left: 25px;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          vertical-align: middle;
+          padding-top: 1px;
+          -webkit-font-smoothing: antialiased;
+          font-family: DelinoIcon !important;
+        }
+
+        .icon::before {
+          content: "";
+        }
+      }
+    }
+  }
+  @include util.breakpoint-down(medium) {
+    display: none;
+    overflow: hidden;
+    direction: rtl;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-flow: column nowrap;
-
-    &__icon {
+    font-family: IRANSans, Tahoma, sans-serif;
+    transition: animation 0.2s ease-in-out;
+    -webkit-transition: animation 0.2s ease-in-out;
+    -moz-transition: animation 0.2s ease-in-out;
+    -ms-transition: animation 0.2s ease-in-out;
+    -o-transition: animation 0.2s ease-in-out;
+    &__box {
       width: 100%;
-      text-align: left;
-      border-bottom: 1px solid #c7c7c7;
-      padding-top: 16px;
-      padding-bottom: 16px;
-      padding-left: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-flow: column nowrap;
 
-      .icon {
+      &__icon {
         width: 100%;
-        color: #0e0e0e;
-        font-size: 0.9em;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        vertical-align: middle;
-        padding-top: 1px;
-        -webkit-font-smoothing: antialiased;
-        font-family: DelinoIcon !important;
+        text-align: left;
+        border-bottom: 1px solid #c7c7c7;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 60px;
 
-        &::before {
-          content: "";
+        .icon {
+          width: 100%;
+          padding: 20px;
+          color: #0e0e0e;
+          font-size: 0.9em;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          vertical-align: middle;
+          padding-top: 1px;
+          -webkit-font-smoothing: antialiased;
+          font-family: DelinoIcon !important;
+          cursor: pointer;
+
+          &::before {
+            content: "";
+          }
+        }
+      }
+
+      h4 {
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      &__input-mobile {
+        position: relative;
+        margin-top: 10px;
+
+        label {
+          display: block;
+          width: 300px;
+          position: absolute;
+          top: 16px;
+          right: 48px;
+          color: #c7c7c7;
+          font-size: 14px;
+          font-family: IRANSans, Tahoma, sans-serif;
+          transition: all 0.15s ease-in;
+          -webkit-transition: all 0.15s ease-in;
+          -moz-transition: all 0.15s ease-in;
+          -ms-transition: all 0.15s ease-in;
+          -o-transition: all 0.15s ease-in;
+        }
+
+        input {
+          width: 300px;
+          padding: 10px;
+          text-align: center;
+          font-size: 20px;
+          font-family: IRANSans, Tahoma, sans-serif;
+          border: none;
+          border-bottom: 1px solid #c7c7c7;
+
+          &:focus {
+            outline: none;
+          }
+
+          &:focus ~ label {
+            position: absolute;
+            top: -10px;
+            left: 68px;
+            font-size: 12px;
+            color: #000;
+          }
+        }
+      }
+
+      button {
+        direction: ltr;
+        position: relative;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: center;
+        color: #fff;
+        background-color: rgb(255, 117, 37);
+        padding: 20px;
+        width: 300px;
+        margin-top: 50px;
+        border: none;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        cursor: pointer;
+
+        .icon {
+          position: absolute;
+          top: 20px;
+          left: 25px;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          vertical-align: middle;
+          padding-top: 1px;
+          -webkit-font-smoothing: antialiased;
+          font-family: DelinoIcon !important;
+        }
+
+        .icon::before {
+          content: "";
         }
       }
     }
 
-    h4 {
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    &__input-mobile {
-      position: relative;
-
-      input {
-        width: 300px;
-        padding: 10px;
-        text-align: center;
-        font-size: 20px;
-        font-family: IRANSans, Tahoma, sans-serif;
-        border: none;
-        border-bottom: 1px solid #c7c7c7;
+    @keyframes popup {
+      0% {
+        transform: translate(0px, 1000px);
+        -webkit-transform: translate(0px, 1000px);
+        -moz-transform: translate(0px, 1000px);
+        -ms-transform: translate(0px, 1000px);
+        -o-transform: translate(0px, 1000px);
       }
-
-      label {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 300px;
-
-        font-family: IRANSans, Tahoma, sans-serif;
+      100% {
+        transform: translate(0px, 0px);
+        -webkit-transform: translate(0px, 0px);
+        -moz-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+        -o-transform: translate(0px, 0px);
       }
     }
-
-    button {
-      position: relative;
-      cursor: pointer;
-
-      .icon {
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        vertical-align: middle;
-        padding-top: 1px;
-        -webkit-font-smoothing: antialiased;
-        font-family: DelinoIcon !important;
+    @keyframes popdown {
+      0% {
+        transform: translate(0px, 0px);
+        -webkit-transform: translate(0px, 0px);
+        -moz-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+        -o-transform: translate(0px, 0px);
       }
-
-      .icon::before {
-        content: "";
+      100% {
+        transform: translate(0px, 1000px);
+        -webkit-transform: translate(0px, 1000px);
+        -moz-transform: translate(0px, 1000px);
+        -ms-transform: translate(0px, 1000px);
+        -o-transform: translate(0px, 1000px);
       }
     }
   }
-
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-  //   transform: translate(-50%, -50%);
-  //   -webkit-transform: translate(-50%, -50%);
-  //   -moz-transform: translate(-50%, -50%);
-  //   -ms-transform: translate(-50%, -50%);
-  //   -o-transform: translate(-50%, -50%);
-  //   width: 100%;
-  //   height: 100%;
-  //   z-index: 1000000;
-
-  //   &::before {
-  //     content: "";
-  //     position: absolute;
-  //     top: 50%;
-  //     left: 50%;
-  //     transform: translate(-50%, -50%);
-  //     -webkit-transform: translate(-50%, -50%);
-  //     -moz-transform: translate(-50%, -50%);
-  //     -ms-transform: translate(-50%, -50%);
-  //     -o-transform: translate(-50%, -50%);
-  //     width: 100%;
-  //     height: 100%;
-  //     background-color: #000;
-  //     opacity: 0.4;
-  //   }
-  //   &::after {
-  //     content: "";
-  //     position: absolute;
-  //     top: 50%;
-  //     left: 50%;
-  //     transform: translate(-50%, -50%);
-  //     -webkit-transform: translate(-50%, -50%);
-  //     -moz-transform: translate(-50%, -50%);
-  //     -ms-transform: translate(-50%, -50%);
-  //     -o-transform: translate(-50%, -50%);
-  //     width: 400px;
-  //     height: 350px;
-  //     background-color: #fff;
-
-  //     @include util.breakpoint-down(medium) {
-  //       width: 250px;
-  //       height: 250px;
-  //     }
-  //   }
-
-  //   button {
-  //     position: absolute;
-  //     top: 50%;
-  //     left: 50%;
-  //     transform: translate(-50%, -50%);
-  //     -webkit-transform: translate(-50%, -50%);
-  //     -moz-transform: translate(-50%, -50%);
-  //     -ms-transform: translate(-50%, -50%);
-  //     -o-transform: translate(-50%, -50%);
-  //     z-index: 1000000;
-  //     cursor: pointer;
-
-  //     .icon {
-  //       font-style: normal;
-  //       font-weight: normal;
-  //       font-variant: normal;
-  //       text-transform: none;
-  //       line-height: 1;
-  //       vertical-align: middle;
-  //       padding-top: 1px;
-  //       -webkit-font-smoothing: antialiased;
-  //       font-family: DelinoIcon !important;
-  //     }
-
-  //     .icon::before {
-  //       content: "";
-  //     }
-  //   }
 }
