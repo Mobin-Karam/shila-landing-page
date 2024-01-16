@@ -3,8 +3,9 @@ const modalBox = document.getElementById("modal");
 const modalBoxSmall = document.getElementById("modal-small");
 const exitModal = document.getElementById("exit-modal");
 const mobileInput = document.getElementById("mobile");
+const mobileLabel = document.getElementById("mobile-label");
 
-// Modal Login Form
+// Modal Login Form =========================
 // If window Width < 900 Show this
 if (window.innerWidth < 900) {
   // Login Button
@@ -36,8 +37,9 @@ if (window.innerWidth < 900) {
   });
 }
 
-
-// Mobile Input
-
+// Mobile Input =====================================
+mobileInput.addEventListener("focusin", () => {
+  mobileLabel.style.top = "-10px";
+});
 
 

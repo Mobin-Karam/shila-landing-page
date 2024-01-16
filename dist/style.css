@@ -249,14 +249,14 @@ header .header__user-button:hover {
   .container__modal__box__input-mobile {
     width: 100%;
     position: relative;
+    display: flex;
     margin-top: 10px;
   }
   .container__modal__box__input-mobile label {
     display: block;
     width: 300px;
     position: absolute;
-    top: 16px;
-    right: 48px;
+    right: 100px;
     color: #c7c7c7;
     font-size: 14px;
     font-family: IRANSans, Tahoma, sans-serif;
@@ -268,8 +268,8 @@ header .header__user-button:hover {
   }
   .container__modal__box__input-mobile input {
     width: 300px;
-    padding: 10px;
-    margin: 0 auto;
+    padding: 0;
+    margin: 10px auto;
     text-align: center;
     font-size: 20px;
     font-family: IRANSans, Tahoma, sans-serif;
@@ -280,9 +280,11 @@ header .header__user-button:hover {
     outline: none;
   }
   .container__modal__box__input-mobile input:focus ~ label {
+    position: absolute;
     top: -10px;
-    left: 0;
+    right: 110px;
     font-size: 12px;
+    color: #000;
   }
   .container__modal__box button {
     direction: ltr;
