@@ -38,8 +38,24 @@ if (window.innerWidth < 900) {
 }
 
 // Mobile Input =====================================
+
+let mobinInputValue = mobileInput.value.replace(/\s/g, "");
+
 mobileInput.addEventListener("focusin", () => {
   mobileLabel.style.top = "-10px";
+  mobileLabel.style.color = "#000";
 });
 
+if (mobileInput.value.length === 0) {
+  mobileInput.addEventListener("focusout", () => {
+    mobileLabel.style.top = "14px";
+    mobileLabel.style.color = "#c7c7c7";
+  });
+  console.log("is 0");
+}
+if (!(mobileInput.value.length === 0)) {
+  mobileLabel.style.top = "-10px";
+  console.log("not 0");
+}
 
+console.log(mobinInputValue.length);
