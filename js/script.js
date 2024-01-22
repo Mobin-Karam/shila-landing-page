@@ -12,6 +12,7 @@ if (window.innerWidth < 900) {
   loginButton.addEventListener("click", () => {
     modalBoxSmall.style.animation = "popup 0.6s ease-in-out 0s 1 alternate";
     modalBox.style.display = "flex";
+    document.body.style.overflow = "hidden";
   });
   // Exit Button From Login Form
   exitModal.addEventListener("click", () => {
@@ -19,6 +20,7 @@ if (window.innerWidth < 900) {
     setTimeout(() => {
       modalBox.style.display = "none";
     }, 600);
+    document.body.style.removeProperty("overflow");
   });
 
   // If window Width > 900 Show this
@@ -27,6 +29,7 @@ if (window.innerWidth < 900) {
   loginButton.addEventListener("click", () => {
     modalBoxSmall.style.animation = "popup 0.6s ease-in-out 0s 1 alternate";
     modalBox.style.display = "block";
+    document.body.style.overflow = "hidden";
   });
   // Exit Button From Login Form
   exitModal.addEventListener("click", () => {
@@ -34,6 +37,11 @@ if (window.innerWidth < 900) {
     setTimeout(() => {
       modalBox.style.display = "none";
     }, 300);
+    document.body.style.removeProperty("overflow");
+  });
+  // Exit with CLick on Out Side of Login Form
+  modalBox.addEventListener("click", () => {
+    modalBox.style.display = "none";
   });
 }
 
