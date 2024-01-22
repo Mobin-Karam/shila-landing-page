@@ -235,8 +235,13 @@
     flex-flow: row nowrap;
     gap: 10px;
 
+    &__navbar {
+      display: none;
+    }
+
     &__items {
       width: 70%;
+      // padding: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -247,7 +252,8 @@
       &__box {
         display: inline-block;
         width: 300px;
-        height: 100px;
+        height: 300px;
+        margin: 15px 0;
         background-color: #b1b1b1;
       }
     }
