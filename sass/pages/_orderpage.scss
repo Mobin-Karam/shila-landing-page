@@ -222,7 +222,7 @@
 
   // Main Conntet ========================
   &__content {
-    width: 1400px;
+    // width: 1400px;
     max-width: min(1400px);
     min-height: 80vh;
     margin: 20px;
@@ -239,11 +239,14 @@
       justify-content: center;
       flex-flow: row wrap;
 
-      // Content Items Navbar
+      // Navbar Content
       &__navbar {
         width: 100%;
         nav {
+          position: relative;
           width: 100%;
+
+          // Menu
           ul {
             width: 100%;
             margin: 0;
@@ -270,25 +273,94 @@
               border-left: 1px solid var(--first-border-color);
               border-top: 1px solid var(--first-border-color);
               border-right: 1px solid var(--first-border-color);
+              border-bottom: var(--white-bg-color);
               text-decoration: none;
+              z-index: 99999;
+            }
+          }
+
+          // Items Of Navbar
+          .foods-type {
+            position: static;
+            top: 0;
+            width: 100%;
+            // height: 114px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: row nowrap;
+            border: 1px solid var(--first-border-color);
+            background-color: var(--white-bg-color);
+            // overflow: scroll;
+
+            .foods-type-items {
+              padding: 20px 0;
+              // height: 114px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-flow: column nowrap;
+              cursor: pointer;
+
+              .type-img {
+                width: 40px;
+                height: 40px;
+                display: inline-block;
+                vertical-align: middle;
+                background-size: 40px 40px;
+                margin-bottom: 10px;
+                transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+                background-image: url("../../assets/images/type-piko.png");
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+              }
+
+              .type {
+                p {
+                  font-size: 14px;
+                  color: var(--black-two);
+                }
+              }
             }
           }
         }
       }
 
-      // Content Items Center
-      // &__center {
-      //   width: 100%;
-      //   background-color: #cecece;
+      // Center Content
+      &__center {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row wrap;
+        background-color: #cecece;
 
-      //   &__box {
-      //     display: inline-block;
-      //     width: 322px;
-      //     height: 300px;
-      //     margin: 15px 0;
-      //     background-color: #b1b1b1;
-      //   }
-      // }
+        &__box {
+          display: inline-block;
+          width: 322px;
+          height: 200px;
+          margin: 15px 0;
+          background-color: #b1b1b1;
+          background-image: url("../../assets/images/14sh3bo1.5hx_560x350.jpg");
+          background-position: center;
+          background-size: cover;
+
+          &--types {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: row wrap;
+
+            .inner {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-flow: row wrap;
+            }
+          }
+        }
+      }
     }
 
     // Main Content SideBar ========================

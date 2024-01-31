@@ -1,7 +1,7 @@
 import api from "./api.js";
 
 // API call
-api();
+console.log(api());;
 
 // Main Content Change wiht Nav
 const menus = document.querySelectorAll(".menu");
