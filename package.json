@@ -1,13 +1,13 @@
 {
   "name": "shila-landing-page",
   "version": "1.0.0",
-  "description": "",
+  "description": "shila landing page",
   "main": "index.js",
   "scripts": {
     "watch": "sass --watch ./sass/style.scss ./dist/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "MobinKaram",
   "license": "ISC"
 }
