@@ -63,9 +63,7 @@ if (mobileInput.value.length === 0) {
     mobileLabel.style.top = "14px";
     mobileLabel.style.color = "#c7c7c7";
   });
-  console.log("is 0");
 }
 if (!(mobileInput.value.length === 0)) {
   mobileLabel.style.top = "-10px";
-  console.log("not 0");
 }

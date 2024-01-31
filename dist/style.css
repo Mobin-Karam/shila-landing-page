@@ -1,5 +1,11 @@
 :root {
   --button-bgc-color: rgb(255, 102, 0);
+  --primary-bg-color: hsl(210, 20%, 98%);
+  --white-bg-color: hsl(0, 0%, 100%);
+  --first-border-color: hsl(0, 0%, 89%);
+  --gray-one: hsl(0, 0%, 80%);
+  --black-one: hsl(0, 0%, 0%);
+  --black-two: hsl(0, 0%, 20%);
 }
 
 * {
@@ -18,7 +24,7 @@ body .container {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-color: #ececec;
+  background-color: var(--primary-bg-color);
 }
 
 @font-face {
@@ -273,13 +279,30 @@ body .container {
 }
 .main__content__items__navbar nav ul {
   width: 100%;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-flow: row nowrap;
 }
-.main__content__items__navbar nav ul li {
-  list-style-type: none;
+.main__content__items__navbar nav ul a {
+  padding: 10px 15px;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--black-two);
+  border: 1px solid transparent;
+}
+.main__content__items__navbar nav ul a:hover {
+  color: var(--button-bg-color);
+}
+.main__content__items__navbar nav ul .active {
+  padding: 10px 15px;
+  color: var(--black-two);
+  background-color: var(--white-bg-color);
+  border-left: 1px solid var(--first-border-color);
+  border-top: 1px solid var(--first-border-color);
+  border-right: 1px solid var(--first-border-color);
+  text-decoration: none;
 }
 .main__content__sidebar {
   width: 30%;
@@ -297,14 +320,14 @@ body .container {
   position: relative;
   width: 400px;
   height: 250px;
-  background-color: #dbdbdb;
-  border: 1px solid #9e9e9e;
+  background-color: var(--white-bg-color);
+  border: 1px solid var(--first-border-color);
   box-sizing: border-box;
 }
 .main__content__sidebar__cart__title {
   position: absolute;
   width: 100%;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 1px solid var(--first-border-color);
 }
 .main__content__sidebar__cart__title P {
   margin: 5px 10px;
@@ -324,13 +347,14 @@ body .container {
   flex-flow: column nowrap;
 }
 .main__content__sidebar__cart__items__nothing span {
-  color: #9e9e9e;
+  color: var(--gray-one);
 }
 .main__content__sidebar .icon {
   position: relative;
   margin-left: 8px;
   margin-right: 0px;
-  color: #9e9e9e;
+  margin-bottom: 20px;
+  color: var(--gray-one);
   font-size: 5.125rem;
   font-style: normal;
   font-weight: normal;
@@ -344,7 +368,7 @@ body .container {
 }
 .main__content__sidebar .icon::before {
   content: "\e918";
-  color: #9e9e9e;
+  color: var(--gray-one);
 }
 
 header .header__user-button {
