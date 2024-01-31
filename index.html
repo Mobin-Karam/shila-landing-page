@@ -19,9 +19,6 @@
     <!-- Style Link -->
     <!-- <link rel="stylesheet" href="./styles/css/main.css" /> -->
     <link rel="stylesheet" href="./dist/style.css" />
-
-    <script src="./js/button.js"></script>
-    <script src="./js/login-form.js"></script>
   </head>
 
   <body>
@@ -97,26 +94,29 @@
               </div>
             </aside>
             <div class="main__content__items">
-              <div class="main__content__navbar">
+              <!-- Main Content Navbar -->
+              <div class="main__content__items__navbar">
                 <nav>
                   <ul>
-                    <li></li>
-                    <li></li>
+                    <li>اطلاعات رستوران</li>
+                    <li>منوی سفارش</li>
                   </ul>
                 </nav>
               </div>
-              <!-- 1 -->
-              <div class="main__content__items__box"></div>
-              <div class="main__content__items__box"></div>
-              <div class="main__content__items__box"></div>
-              <!-- 2 -->
-              <div class="main__content__items__box"></div>
-              <div class="main__content__items__box"></div>
-              <div class="main__content__items__box"></div>
-              <!-- 3 -->
-              <div class="main__content__items__box"></div>
-              <div class="main__content__items__box"></div>
-              <div class="main__content__items__box"></div>
+              <div class="main__content__items__center">
+                <!-- 1 -->
+                <div class="main__content__items__center__box"></div>
+                <div class="main__content__items__center__box"></div>
+                <div class="main__content__items__center__box"></div>
+                <!-- 2 -->
+                <div class="main__content__items__center__box"></div>
+                <div class="main__content__items__center__box"></div>
+                <div class="main__content__items__center__box"></div>
+                <!-- 3 -->
+                <div class="main__content__items__center__box"></div>
+                <div class="main__content__items__center__box"></div>
+                <div class="main__content__items__center__box"></div>
+              </div>
             </div>
           </div>
         </main>
@@ -128,7 +128,11 @@
 
         <!-- Modal -->
         <div class="container__modal" id="modal">
-          <div class="container__modal__box" id="modal-small">
+          <div
+            class="container__modal__box"
+            id="modal-small"
+            onclick="event.stopPropagation()"
+          >
             <div class="container__modal__box__icon">
               <i class="icon" id="exit-modal"></i>
             </div>
@@ -146,5 +150,7 @@
     </div>
     <!-- Scripts  -->
     <script src="./js/script.js"></script>
+    <script src="./js/button.js"></script>
+    <script src="./js/login-form.js"></script>
   </body>
 </html>

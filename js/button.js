@@ -7,3 +7,4 @@ function handleExitButton() {
   document.querySelector(".popup-box").style.display = "none";
   console.log("Exit");
 }
+
