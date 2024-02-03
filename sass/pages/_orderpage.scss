@@ -344,6 +344,7 @@
 
           // Top Item
           .top {
+            direction: ltr;
             width: 100%;
             display: flex;
             align-items: center;
@@ -388,6 +389,7 @@
               width: 312px;
               height: 280px;
               margin: 15px 0;
+              direction: rtl;
               display: flex;
               align-items: center;
               justify-content: flex-start;
@@ -446,6 +448,56 @@
                 &:hover > .overlay {
                   visibility: visible;
                   opacity: 0.9;
+                }
+              }
+
+              .box-image-content {
+                width: 100%;
+                padding: 15px;
+
+                .image-des {
+                  font-size: 12.5px;
+                  font-weight: 700;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  margin: 0;
+                  margin-bottom: 5px;
+                }
+
+                div {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+
+                  .price {
+                    font-size: 13px;
+                  }
+
+                  .addto-cart {
+                    width: 40px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid var(--button-bgc-color);
+                    background-color: #fff;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 15px;
+                    text-align: center;
+                    border-radius: 4px;
+                    -webkit-border-radius: 4px;
+                    -moz-border-radius: 4px;
+                    -ms-border-radius: 4px;
+                    -o-border-radius: 4px;
+                    font-family: IRANSans;
+                    cursor: pointer;
+
+                    &:hover {
+                      background-color: var(--button-bgc-color);
+                      color: #fff;
+                    }
+                  }
                 }
               }
             }
